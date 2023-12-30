@@ -1,0 +1,14 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+  padding-top: 20vh;
+}
+
+button {
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+  padding: 4px;
+}
