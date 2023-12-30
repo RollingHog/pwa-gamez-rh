@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png">
+  <link rel="canonical" href="https://rollinghog.github.io/pwa-gamez-rh/" />
+  <link rel="manifest" href="/pwa-gamez-rh/manifest.webmanifest">
+  <title>Сборник веб-игр от RollingHog</title>
+  <style>
+    body {
+      margin: 0;
+      margin-bottom: 1vh;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+
+      color: white;
+      background-color: black;
+
+      text-align: center;
+    }
+
+   
+  </style>
+</head>
+<body>
+  <h3>Сборник веб-игр от RollingHog</h3>
+  <a href="catch-the-star/index.html">Catch-the-star</a>
+</body>
+<script>
+  // IMPORTANT
+  if (navigator.serviceWorker) {
+    const path = '/pwa-gamez-rh'
+    navigator.serviceWorker.register (
+      path + '/sw.js',
+      {scope: path + '/'}
+    ).catch( () => console.log('sevice worker failed'))
+  }
+</script>
+<script src="sw.js"></script>
+</html>

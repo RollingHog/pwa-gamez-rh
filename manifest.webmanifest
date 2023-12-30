@@ -1,0 +1,22 @@
+{
+  "name": "RollingHog pwa-gamez",
+  "short_name": "RH Gamez",
+  "id": "/pwa-gamez-rh/",
+  "description": "Various games in form of web/pwa pages",
+ 
+  "scope":     "/pwa-gamez-rh/",
+  "start_url": "/pwa-gamez-rh/",
+ 
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+ 
+  "display": "fullscreen", 
+ 
+  "icons": [
+      {
+        "src": "/pwa-gamez-rh/img/icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+  ]
+}
