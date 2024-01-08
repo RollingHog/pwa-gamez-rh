@@ -24,6 +24,12 @@
       text-align: center;
     }
 
+    button {
+      color: white;
+      border: 1px solid white;
+      background-color: black;
+    }
+
     #statblock {
       z-index: 2;
       position: absolute;
@@ -32,13 +38,8 @@
     }
 
     #starsWrap {
-      z-index: 1;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      z-index: 0;
+      background-image: url(background.png);
     }
 
     img.star {
@@ -56,7 +57,17 @@
   </style>
 </head>
 <body>
-  <h3>Игра "Поймай звезду"</h3>
+  <div id="menu" class="fullscreen" style="background-image: url(menu.jpg); background-color: black;">
+    <div id="menu_inner">
+      <h3>Игра "Поймай звезду"</h3>
+      <br>
+      <button onclick="Menu.hide()">Играть</button>
+    </div>
+    <button id=backBtn onclick="history.back()" class="left-top">Назад</button>
+  </div>
+
+  <button id=menuBtn onclick="Menu.show()" hidden class="left-top z-1 menu-button">Меню</button>
+
   <div id="statblock">
     Статистика
     <br>
@@ -71,13 +82,13 @@
       <br>
     </div>
   </div>
-  <button id=backBtn onclick="history.back()" style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Назад</button>
-  <button id=menuBtn hidden style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Меню</button>
+
   <div id="cat"></div>
-  <div id="starsWrap">
-    <img class="star" src="star.png" alt="">
+  <div id="starsWrap" class="fullscreen">
+    <!-- <img class="star" src="star.png" alt=""> -->
   </div>
 </body>
 <!-- <script src="../sw.js"></script> -->
+<script src="../common/common.js"></script>
 <script src="index.js"></script>
 </html>

@@ -1,15 +1,12 @@
 /* global
   VERSION
+  getEl isPause
 */
 
 ////////////////////// COMMON ///////////////////////
 
 // eslint-disable-next-line no-unused-vars
 const log = console.log
-// eslint-disable-next-line no-unused-vars
-function getEl(name) {
-  return document.getElementById(name)
-}
 
 // thx https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
 function getRandomInt(min, max) {
@@ -33,13 +30,13 @@ function createElementFromHTML(htmlString) {
 
 const data = {
   _points: 0,
-  set points(value) {
-    this._points += +value
+  point(value = 1) {
+    this._points += value
     getEl('stat_points').innerText = this._points
   },
   _lost: 0,
-  lost() {
-    this._lost += 1
+  lost(value = 1) {
+    this._lost += value
     getEl('stat_lost').innerText = this._lost
   }
 }
@@ -55,7 +52,7 @@ function addStar() {
   star.style.top = '0px'
   star.style.left = `${getRandomInt(STAR_PADDING, window.innerWidth-STAR_PADDING)}px`
   star.onclick = () => {
-    data.points = 1
+    data.point()
     star.remove()
   }
 
@@ -68,6 +65,10 @@ let mainSpeed = 3
 
 async function mainCycle() {
   while(true) {
+    if(isPause) {
+      await sleep(200)
+      continue
+    }
     /**
      * @type {HTMLElement[]}
     */
@@ -78,6 +79,7 @@ async function mainCycle() {
     if(Math.random() < difficultyMult) {
       addStar()
     }
+
     if(stars.length < 5) {
         if(Math.random() < difficultyMult) {
         addStar()
