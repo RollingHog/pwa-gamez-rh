@@ -7,7 +7,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="../img/icon.png">
   <link rel="canonical" href="https://rollinghog.github.io/pwa-gamez-rh/" />
   <link rel="manifest" href="/pwa-gamez-rh/manifest.webmanifest">
-  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="../common/common.css">
   <title>Игра "Поймай звезду"</title>
   <style>
     body {
@@ -24,12 +24,58 @@
       text-align: center;
     }
 
+    #statblock {
+      z-index: 2;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+    }
+
+    #starsWrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    img.star {
+      width: 50px;
+      position: absolute;
+      /* left: 50vw;
+      top: 50vh; */
+    }
+
+    #cat {
+
+    }
+
    
   </style>
 </head>
 <body>
   <h3>Игра "Поймай звезду"</h3>
-  <button onclick="history.back()" style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Назад</button>
+  <div id="statblock">
+    Статистика
+    <br>
+    Очки: <span id="stat_points">0</span>
+    <br>
+    Пропущено: <span id="stat_lost">0</span>
+    
+    <div id="stat_debug">
+      Звезд: <span id="stat_stars">0</span>
+      <br>
+      <button onclick="addStar()">addStar</button>
+      <br>
+    </div>
+  </div>
+  <button id=backBtn onclick="history.back()" style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Назад</button>
+  <button id=menuBtn hidden style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Меню</button>
+  <div id="cat"></div>
+  <div id="starsWrap">
+    <img class="star" src="star.png" alt="">
+  </div>
 </body>
 <!-- <script src="../sw.js"></script> -->
 <script src="index.js"></script>
