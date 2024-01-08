@@ -1,7 +1,7 @@
 /* global
-  VERSION
-  getEl isPause
+  getEl mainCycle
 */
+// VERSION
 
 ////////////////////// COMMON ///////////////////////
 
@@ -14,10 +14,6 @@ function getRandomInt(min, max) {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
-
-// eslint-disable-next-line no-unused-vars
-const sleep = (timeout) => new Promise(r => setTimeout(r, timeout))
-
 
 // eslint-disable-next-line no-unused-vars
 function createElementFromHTML(htmlString) {
@@ -63,17 +59,13 @@ let difficultyMult = 0.08
 
 let mainSpeed = 3
 
-async function mainCycle() {
-  while(true) {
-    if(isPause) {
-      await sleep(200)
-      continue
-    }
+async function main() {
+  mainCycle( ()=>{
     /**
      * @type {HTMLElement[]}
     */
-   let stars = document.querySelectorAll('img.star')
-   getEl('stat_stars').innerText = stars.length
+    let stars = document.querySelectorAll('img.star')
+    getEl('stat_stars').innerText = stars.length
     //  log('stars:', stars.length)
 
     if(Math.random() < difficultyMult) {
@@ -97,14 +89,12 @@ async function mainCycle() {
       let speed = mainSpeed
       star.style.top = `${tCoord + speed}px`
     }
-
-    await sleep(50)
-  }
+  })
 }
 
 function init() {
   // getEl('el__version').innerText = VERSION
-  mainCycle()
+  main()
 }
 
 try {
