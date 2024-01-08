@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="common/common.css">
   <title>Сборник веб-игр от RollingHog</title>
   <style>
+
     body {
       margin: 0;
       margin-bottom: 1vh;
@@ -24,20 +25,38 @@
       text-align: center;
     }
 
-   
+     /* ROTATION */
+    @keyframes rotating {
+      0% {
+        transform: scale(1.3, 1);
+      }
+      50% {
+        transform: scale(-1.3, 1);
+      }
+      100% {
+        transform: scale(1.3, 1);
+      }
+    }
+    .rotating {
+      animation: rotating 6s linear infinite;
+    }
   </style>
 </head>
 <body>
-  <h3>Сборник веб-игр от RollingHog</h3>
-  <h5>
-    Версия <span id="el__version"></span>
-  </h5> 
+  <div id="menu">
+    <img src="./img/icon.png" style="width: 100px;" class="rotating">
+    <h3>Сборник веб-игр от RollingHog</h3>
+    <h5>
+      Версия <span id="el__version"></span>
+    </h5> 
 
-  <a href="catch-the-star/index.html">Catch-the-star</a>
-  <a style="position:absolute; bottom:8px; left:8px; color: white;" href="https://github.com/RollingHog/pwa-gamez-rh" target="_blank">
-    Github
-  </a>
-  <button onclick="window.close()" style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Закрыть</button>
+  
+    <a href="catch-the-star/index.html">Catch-the-star</a>
+    <a style="position:absolute; bottom:8px; left:8px; color: white;" href="https://github.com/RollingHog/pwa-gamez-rh" target="_blank">
+      Github
+    </a>
+    <button onclick="window.close()" style="position: absolute; left: 8px; top: 8px; border: 1px solid white;">Закрыть</button>
+  </div>
 </body>
 <script>
   // IMPORTANT
