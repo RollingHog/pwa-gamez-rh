@@ -44,7 +44,7 @@ function addStar() {
   const star = document.createElement('img')
   star.classList.add('star')
   star.draggable = false
-  star.setAttribute('src', 'star.png')
+  star.setAttribute('src', 'img/star.png')
   star.style.top = '0px'
   star.style.left = `${getRandomInt(STAR_PADDING, window.innerWidth-STAR_PADDING)}px`
   star.onclick = () => {
