@@ -6,7 +6,7 @@ const APP_PREFIX = 'rh_pgz_dsc'
 // The version of the cache. Every time you change any of the files
 // you need to change this version.
 // eslint-disable-next-line no-unused-vars
-const VERSION = '1.1.1'
+const VERSION = '1.1.2'
 
 // The files to make available for offline use
 // eslint-disable-next-line no-unused-vars
@@ -17,6 +17,8 @@ const URLS = [
   `${GHP_PATH}/common/common.js`,
   `${GHP_PATH}/catch-the-star/index.html`,
   `${GHP_PATH}/catch-the-star/index.js`,
+  `${GHP_PATH}/catch-the-star/img/menu.jpg`,
+  `${GHP_PATH}/catch-the-star/img/background.png`,
 ]
 
 // https://stackoverflow.com/questions/46541071/progressive-web-app-does-not-work-offline-error
