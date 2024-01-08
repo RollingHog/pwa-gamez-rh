@@ -1,4 +1,4 @@
-///////////////////// GLOBAL FLAGS
+///////////////////// GLOBAL VARS
 
 let isPause = true
 

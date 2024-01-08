@@ -57,7 +57,7 @@ function addStar() {
 
 let difficultyMult = 0.08
 
-let mainSpeed = 3
+let mainSpeed = 4
 
 async function main() {
   mainCycle( ()=>{
@@ -81,7 +81,7 @@ async function main() {
 
     for(let star of stars) {
       const tCoord = parseInt(star.style.top)
-      if (tCoord > window.innerHeight) {
+      if (tCoord > window.innerHeight - 40) {
         data.lost()
         star.remove()
         continue
