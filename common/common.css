@@ -22,6 +22,12 @@ button {
   top: 8px;
 }
 
+.right-top {
+  position: absolute; 
+  right: 8px; 
+  top: 8px;
+}
+
 .fullscreen {
   position: absolute;
   left: 0;

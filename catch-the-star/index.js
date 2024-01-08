@@ -1,5 +1,5 @@
 /* global
-  getEl mainCycle
+  getEl mainCycle isDebug
 */
 // VERSION
 
